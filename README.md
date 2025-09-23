@@ -5,8 +5,8 @@ This repository contains Python scripts developed for the analysis of **Rates of
 The methods are designed to:
 - Quantify temporal variability in long-term paleoclimate time series (e.g., benthic δ¹⁸O).
 - Compare multiple RoC estimation approaches (derivative-based, time-bin methods, robust statistics).
-- Evaluate the sensitivity of results to **time-window size**, **original data resolution**, and **interpolation methods**.
-- Detect **paleoclimate events**, **stage boundaries**, and assess robustness under downsampling.
+- Evaluate the sensitivity of results to time-window size, original data resolution, and interpolation methods.
+- Detect paleoclimate events, stage boundaries, and assess robustness under downsampling.
 
 These codes support the reproducibility of the analyses presented in our manuscript.
 
