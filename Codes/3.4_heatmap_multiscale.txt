@@ -1,0 +1,31 @@
+### 3.4_heatmap_multiscale.py
+
+**Functionality**  
+This script visualizes rate-of-change results across multiple time-bin widths as a two-dimensional heatmap.  
+It aligns results by age (x-axis) and time-bin width (y-axis), with color intensity representing RoC values.  
+The heatmap provides an overview of how climate variability depends on temporal resolution.
+
+**Input data**  
+- Excel file (.xlsx) containing merged multi-bin results (output from `3.1_merge_timebin_results.py`)  
+- Required structure:  
+  - Age_node (time axis, numeric, e.g., kyr or Ma)  
+  - One column per time-bin width with RoC values  
+
+**User inputs (interactive prompts)**  
+- None (file path is predefined inside the script)  
+
+**Modifiable parameters inside the script**  
+- INPUT_FILE (default = `C:\Users\...\Merged_IQR.xlsx`) – path to merged results  
+- OUT_PNG (default = `RoC_Heatmap.png`) – name of the output figure  
+- CMAP (default = `viridis`) – color map for visualization  
+- VMIN / VMAX (default = auto) – minimum and maximum values for color scaling  
+- FIGSIZE (default = (12, 6)) – figure dimensions  
+- INTERPOLATE (default = True) – whether to smooth the heatmap  
+
+**Expected outputs**  
+- Heatmap figure with:  
+  - X-axis = Age  
+  - Y-axis = Time-bin width  
+  - Colors = RoC values  
+- PNG figure saved in the output directory  
+- Console message confirming the saved output
