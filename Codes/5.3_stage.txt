@@ -1,0 +1,28 @@
+### 5.3_stage.py
+
+**Functionality**  
+This script divides the full time series into predefined stages and calculates descriptive statistics for each stage.  
+It computes metrics such as mean, standard deviation, interquartile range (IQR), and confidence intervals.  
+The results are summarized in both tabular and graphical formats, allowing comparison of variability across stages.
+
+**Input data**  
+- Excel file (.xlsx)  
+- Required columns:  
+  - Age (time axis, numeric, e.g., kyr or Ma)  
+  - Value (proxy measurements, e.g., δ¹⁸O values)  
+
+**User inputs (interactive prompts)**  
+- Excel file path (full path including file name, e.g., `data/Oxygen_Isotopes.xlsx`)  
+
+**Modifiable parameters inside the script**  
+- STAGE_LIMITS (default = 9 predefined intervals) – boundaries defining stages by age  
+- OUT_XLSX (default = `Stage_Stats.xlsx`) – output table with statistics  
+- OUT_PNG (default = `Stage_Stats.png`) – bar plot summarizing stage metrics  
+- CONF_LEVEL (default = 0.95) – confidence interval level  
+- FIGSIZE (default = (12, 6)) – figure size  
+
+**Expected outputs**  
+- Excel file listing, for each stage: mean, standard deviation, IQR, confidence interval  
+- Bar plot showing mean values with error bars for each stage  
+- PNG figure saved to the output directory  
+- Console messages confirming the saved output paths
