@@ -1,0 +1,27 @@
+### 1.6_timebin_mean_rate.py
+
+**Functionality**  
+This script calculates the rate of change between pairs of mean values separated by a fixed time-bin width.  
+For each pair of bins, it computes the absolute difference in means divided by the bin interval, providing a bin-to-bin rate of change.  
+Results are saved as Excel tables and visualized as time series plots.
+
+**Input data**  
+- Excel file (.xlsx)  
+- Required columns:  
+  - Age_node (time-bin midpoint, numeric)  
+  - Mean (mean value within the time-bin)  
+
+**User inputs (interactive prompts)**  
+- None (paths are predefined inside the script, but can be modified manually)  
+
+**Modifiable parameters inside the script**  
+- time_bin_values (default = range(50, 1001, 50)) – list of time-bin widths to process (in kyr)  
+- Input and output paths (default: `C:\Users\...\O_Mean_{tb}.xlsx`)  
+- Plotting style: line color, marker type, axis limits  
+- Title prefix (default = "Rate of Change —— δ18O [{time_bin_value}kyr]")  
+
+**Expected outputs**  
+- Excel files with columns: Age-point, rate  
+- Line plots of rate versus Age-point  
+- One Excel file and one PNG figure for each specified time-bin width  
+- Console messages confirming the saved output paths
