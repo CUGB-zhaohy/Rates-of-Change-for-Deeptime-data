@@ -1,0 +1,26 @@
+### 3.2_log_rate_interval.py
+
+**Functionality**  
+This script performs log-transformed regression between time interval length and rate-of-change values.  
+It fits regression lines for different statistical measures (mean, quartiles, etc.) of the RoC results, calculates the R² goodness of fit, and generates plots showing the scaling relationship between rate and interval length.
+
+**Input data**  
+- Excel file (.xlsx)  
+- Required columns:  
+  - TimeBin (time interval length, numeric, e.g., kyr)  
+  - Rate (rate of change value, numeric)  
+
+**User inputs (interactive prompts)**  
+- None (file path is predefined inside the script but can be modified)  
+
+**Modifiable parameters inside the script**  
+- INPUT_FILE (default = `C:\Users\...\RoC_summary.xlsx`) – input Excel file containing summary results  
+- OUT_DIR (default = `C:\Users\...\RoC_LogFit`) – output directory for results  
+- LOG_BASE (default = 10) – logarithm base for transformation  
+- TITLE_PREFIX (default = "Log-Log Regression") – prefix for figure titles and output file names  
+
+**Expected outputs**  
+- Excel file with regression statistics (slope, intercept, R²) for different measures  
+- Scatter plots of log10(rate) versus log10(interval) with fitted regression lines  
+- Figures saved as PNG in the output directory  
+- Console output summarizing regression results
