@@ -1,0 +1,28 @@
+### 5.2_segmented_fit_dbscan.py
+
+**Functionality**  
+This script performs segmented linear fitting on cumulative curves using the piecewise linear fitting library (pwlf).  
+It identifies breakpoints in the time series, then applies DBSCAN clustering to group breakpoints across multiple scales.  
+The method is designed to detect potential stage boundaries or transitions in climate evolution.
+
+**Input data**  
+- Excel file (.xlsx)  
+- Required columns:  
+  - Age (time axis, numeric, e.g., kyr or Ma)  
+  - Value (proxy measurements, e.g., δ¹⁸O values or cumulative metrics)  
+
+**User inputs (interactive prompts)**  
+- Excel file path (full path including file name, e.g., `data/Oxygen_Isotopes.xlsx`)  
+
+**Modifiable parameters inside the script**  
+- N_BREAKS (default = 5) – maximum number of breakpoints for piecewise fitting  
+- EPS (default = 200) – epsilon parameter for DBSCAN (neighborhood size)  
+- MIN_SAMPLES (default = 2) – minimum samples required to form a DBSCAN cluster  
+- OUT_DIR (default = `C:\Users\...\SegmentedFit`) – output directory for results  
+- FIGSIZE (default = (12, 6)) – figure size  
+
+**Expected outputs**  
+- Excel file containing identified breakpoints and their clustered groups  
+- Plot showing piecewise fits, breakpoints, and DBSCAN cluster assignments  
+- PNG figure saved to the output directory  
+- Console messages confirming the saved output paths
