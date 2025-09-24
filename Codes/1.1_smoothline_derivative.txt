@@ -1,0 +1,30 @@
+### 1.1_smoothline_derivative.py
+
+**Functionality**  
+This script applies LOWESS (Locally Weighted Scatterplot Smoothing) to paleoclimate proxy data (e.g., δ¹⁸O).  
+It generates a smoothed curve with bootstrap confidence intervals, computes the rate of change (first derivative), and visualizes both the fitted curve and its derivative on a dual-axis plot.  
+This approach provides a robust method for detecting rapid climate variability in long-term records.
+
+**Input data**  
+- Excel file (.xlsx)  
+- Required columns:  
+  - Age (time axis, numeric, e.g., kyr or Ma)  
+  - Value (proxy measurements, e.g., δ¹⁸O values)  
+
+**User inputs (interactive prompts)**  
+- Excel file path (full path including file name, e.g., `data/Oxygen_Isotopes.xlsx`)  
+- LOWESS span fraction (`frac`) – smoothing parameter between 0.05–0.5 (default = 0.2)  
+- Number of bootstrap replicates (`N_BOOT`) – iterations for confidence intervals (default = 200)  
+
+**Modifiable parameters inside the script**  
+- GRID_N (default = 1500) – number of grid points for interpolation and derivative calculation  
+- IT (default = 0) – robust reweighting iterations in LOWESS  
+- SCALE_FRACTION (default = 0.25) – scaling factor for plotting the derivative band  
+- OFFSET_FRACTION (default = 0.10) – vertical offset to separate the derivative from the smoothed curve  
+
+**Expected outputs**  
+- Smoothed curve with 95% bootstrap confidence intervals  
+- First derivative (absolute rate of change) with a secondary right-axis scale  
+- Figure saved as:  
+  - `[input_filename]_fit_with_deriv_dual_axis_shifted.png`  
+- Console message confirming the save path
