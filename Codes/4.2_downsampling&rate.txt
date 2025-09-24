@@ -1,0 +1,29 @@
+### 4.2_downsampling&rate.py
+
+**Functionality**  
+This script combines Monte Carlo downsampling with rate-of-change calculations.  
+For each specified resolution, it repeatedly downsamples the dataset, computes rates of change, and aggregates the results to obtain mean rates and confidence intervals.  
+This allows users to evaluate how data resolution influences RoC estimates.
+
+**Input data**  
+- Excel file (.xlsx)  
+- Required columns:  
+  - Age (time axis, numeric, e.g., kyr or Ma)  
+  - Value (proxy measurements, e.g., δ¹⁸O values)  
+
+**User inputs (interactive prompts)**  
+- Excel file path (full path including file name, e.g., `data/Oxygen_Isotopes.xlsx`)  
+
+**Modifiable parameters inside the script**  
+- RESOLUTION_LIST (default = [50, 100, 250, 500]) – downsampling resolutions in kyr  
+- N_ITER (default = 200) – number of Monte Carlo iterations per resolution  
+- START_AGE (default = 67000) – maximum age of the record  
+- END_AGE (default = 0) – minimum age of the record  
+- AGE_INTERVAL (default = 10) – spacing for interpolated age nodes  
+- OUT_DIR (default = `C:\Users\...\Downsampling_Rate`) – output directory for results  
+
+**Expected outputs**  
+- Excel files containing mean rates of change and confidence intervals at each resolution  
+- Line plots showing resolution-dependent RoC curves with 95% CI  
+- One Excel file and one PNG figure for each specified resolution  
+- Console messages confirming the saved output paths
