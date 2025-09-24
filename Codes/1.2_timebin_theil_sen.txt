@@ -1,0 +1,28 @@
+### 1.2_timebin_theil_sen.py
+
+**Functionality**  
+This script calculates the rate of change within each time-bin using the Theil–Sen median slope estimator.  
+It outputs both the slope and its absolute value for each bin, providing a robust measure of change that is less sensitive to outliers than ordinary least squares regression.  
+The results are exported to Excel and visualized as time series plots.
+
+**Input data**  
+- Excel file (.xlsx)  
+- Required columns:  
+  - Age (time axis, numeric, e.g., kyr or Ma)  
+  - Value (proxy measurements, e.g., δ¹⁸O values)  
+
+**User inputs (interactive prompts)**  
+- Excel file path (full path including file name, e.g., `data/Oxygen_Isotopes.xlsx`)  
+
+**Modifiable parameters inside the script**  
+- TIMEBIN_LIST (default = range(500, 1001, 50)) – list of time-bin widths to process (in kyr)  
+- START_AGE (default = 67000) – maximum age of the time axis  
+- END_AGE (default = 0) – minimum age of the time axis  
+- AGE_INTERVAL (default = 10) – step size for generating age nodes  
+- TITLE_PREFIX (default = "O_Theil-Sen_") – prefix for figure titles and output files  
+
+**Expected outputs**  
+- Excel files with columns: TimeBin, Age_node, Counts, Age_unique, Slope_TS, Slope_abs  
+- Line plots of absolute Theil–Sen slope versus Age_node  
+- One Excel file and one PNG file for each specified time-bin width  
+- Console messages confirming the saved output paths
