@@ -1,0 +1,28 @@
+### 1.4_timebin_mean.py
+
+**Functionality**  
+This script calculates the mean value within each time-bin of the input dataset.  
+The mean is computed for proxy values (e.g., δ¹⁸O) falling within sliding time windows, providing a smoothed representation of long-term trends.  
+The results are saved as Excel tables and plotted as mean-value time series.
+
+**Input data**  
+- Excel file (.xlsx)  
+- Required columns:  
+  - Age (time axis, numeric, e.g., kyr or Ma)  
+  - Value (proxy measurements, e.g., δ¹⁸O values)  
+
+**User inputs (interactive prompts)**  
+- Excel file path (full path including file name, e.g., `data/Oxygen_Isotopes.xlsx`)  
+
+**Modifiable parameters inside the script**  
+- TIMEBIN_LIST (default = range(10, 19, 10)) – list of time-bin widths to process (in kyr)  
+- START_AGE (default = 67000) – maximum age of the time axis  
+- END_AGE (default = 0) – minimum age of the time axis  
+- AGE_INTERVAL (default = 10) – step size for generating age nodes  
+- TITLE_PREFIX (default = "O_Mean_") – prefix for figure titles and output files  
+
+**Expected outputs**  
+- Excel files with columns: TimeBin, Age_node, Counts, Age_unique, Mean  
+- Line plots of mean values versus Age_node  
+- One Excel file and one PNG file for each specified time-bin width  
+- Console messages confirming the saved output paths
