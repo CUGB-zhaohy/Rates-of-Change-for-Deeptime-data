@@ -1,0 +1,27 @@
+### 3.1_merge_timebin_results.py
+
+**Functionality**  
+This script merges multiple time-bin result files into a single combined dataset.  
+It extracts the `Age_node` column and one or more calculated metrics (e.g., slope, IQR, mean, rate) from each file, then aligns them into a single matrix for cross-scale comparison.  
+This allows users to directly compare results from different time-bin widths.
+
+**Input data**  
+- Multiple Excel files (.xlsx) containing time-bin analysis results  
+- Each file must include:  
+  - Age_node (time-bin midpoint, numeric)  
+  - One or more result columns (e.g., Mean, IQR, Slope_abs, rate)  
+
+**User inputs (interactive prompts)**  
+- None (input folder and file pattern are predefined inside the script)  
+
+**Modifiable parameters inside the script**  
+- INPUT_DIR (default = `C:\Users\...\IQR-ALL`) – directory containing result files  
+- FILE_GLOB (default = `*IQR.xlsx`) – file pattern to select input files  
+- AGE_COL (default = "Age_node") – column used for alignment across files  
+- OUT_XLSX (default = `Merged_IQR.xlsx`) – output file path  
+- DROP_NAN (default = False) – whether to drop rows with missing values  
+
+**Expected outputs**  
+- A single Excel file combining all input datasets  
+- Rows aligned by Age_node and columns representing different time-bin results  
+- Useful as input for further visualization (e.g., heatmaps, multi-scale curves)
