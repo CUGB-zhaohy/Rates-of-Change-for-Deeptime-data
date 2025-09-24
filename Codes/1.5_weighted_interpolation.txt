@@ -1,0 +1,32 @@
+### 1.5_weighted_interpolation.py
+
+**Functionality**  
+This script performs interpolation for missing time-bin values using inverse distance weighting (IDW).  
+Two approaches are included:  
+1) distance-only weighting, and  
+2) distance combined with sample counts weighting.  
+It fills bins where Counts = 0, producing more complete datasets for downstream RoC analyses.
+
+**Input data**  
+- Excel file (.xlsx)  
+- Required columns:  
+  - Age_node (time-bin midpoint, numeric)  
+  - Mean_origin (mean value before interpolation)  
+  - Counts (number of data points in each bin)  
+
+**User inputs (interactive prompts)**  
+- Distance exponent `a` for the distance&counts weighting method (default = 1.0)  
+
+**Modifiable parameters inside the script**  
+- time_bin_values (default = range(10, 19, 10)) – list of time-bin widths to process (in kyr)  
+- Input and output paths (default set to `C:\Users\...\O_Mean_{TimeBin}.xlsx`)  
+- edge (default = "0") – how to handle bins with only one neighbor:  
+  - "0" → leave as zero  
+  - "nearest" → copy nearest neighbor’s value  
+
+**Expected outputs**  
+- Interpolated Excel files with new columns:  
+  - Value_OnlyDistance  
+  - Value_Distance&Counts  
+- One output Excel file for each processed time-bin width  
+- Console messages confirming the saved output paths
