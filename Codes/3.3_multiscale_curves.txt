@@ -1,0 +1,29 @@
+### 3.3_multiscale_curves.py
+
+**Functionality**  
+This script compiles and visualizes rate-of-change curves generated at different time-bin widths.  
+It overlays multiple RoC curves on a single plot to highlight how temporal resolution affects the shape, amplitude, and timing of variability.  
+This provides a direct comparison of multi-scale results.
+
+**Input data**  
+- Multiple Excel files (.xlsx) containing time-bin results  
+- Each file must include:  
+  - Age_node (time-bin midpoint, numeric)  
+  - Rate (rate-of-change values)  
+
+**User inputs (interactive prompts)**  
+- None (file paths are predefined inside the script)  
+
+**Modifiable parameters inside the script**  
+- INPUT_FILES (list of paths, default = several Excel outputs from earlier scripts)  
+- AGE_COL (default = "Age_node") – column representing the time axis  
+- RATE_COL (default = "rate") – column representing the rate of change  
+- OUT_PNG (default = `RoC_Multiscale.png`) – name of the output figure  
+- LINE_STYLES (colors, markers, etc.) – can be adjusted for clearer comparison  
+
+**Expected outputs**  
+- A single figure overlaying RoC curves from multiple time-bin widths  
+- X-axis: Age (descending, older to younger)  
+- Y-axis: Rate of change  
+- PNG file saved to the output directory  
+- Console message confirming the saved output
