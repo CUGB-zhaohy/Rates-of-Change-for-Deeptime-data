@@ -1,0 +1,31 @@
+### 5.1_event_peakrate_detection.py
+
+**Functionality**  
+This script detects the peak rate of change within predefined geological events.  
+For each event defined by a start and end age, it searches the RoC curve and extracts the maximum value.  
+It provides a systematic way to compare event intensities across multiple intervals.
+
+**Input data**  
+- Two Excel files (.xlsx):  
+  1. Event definition file containing:  
+     - Event name  
+     - Start (start age)  
+     - End (end age)  
+  2. RoC results file containing:  
+     - Age_node (time axis, numeric)  
+     - Rate (rate-of-change values)  
+
+**User inputs (interactive prompts)**  
+- None (file paths are predefined inside the script but can be modified)  
+
+**Modifiable parameters inside the script**  
+- EVENT_FILE (default = `C:\Users\...\Events.xlsx`) – event definitions  
+- ROC_FILE (default = `C:\Users\...\RoC_results.xlsx`) – rate-of-change dataset  
+- OUT_XLSX (default = `Event_PeakRates.xlsx`) – output table  
+- OUT_PNG (default = `Event_PeakRates.png`) – output figure  
+
+**Expected outputs**  
+- Excel file listing, for each event: Name, Start, End, PeakRate, PeakAge  
+- Plot with events highlighted, showing maximum RoC within each interval  
+- PNG figure saved to the output directory  
+- Console messages confirming the saved output paths
