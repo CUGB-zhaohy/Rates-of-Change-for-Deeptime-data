@@ -1,0 +1,29 @@
+### 4.1_downsampling.py
+
+**Functionality**  
+This script evaluates the effect of original data resolution by performing Monte Carlo downsampling.  
+It randomly reduces the number of data points according to a specified resolution, repeats the process multiple times, and computes mean curves with confidence intervals.  
+This helps assess the robustness of RoC calculations under lower-resolution sampling.
+
+**Input data**  
+- Excel file (.xlsx)  
+- Required columns:  
+  - Age (time axis, numeric, e.g., kyr or Ma)  
+  - Value (proxy measurements, e.g., δ¹⁸O values)  
+
+**User inputs (interactive prompts)**  
+- Excel file path (full path including file name, e.g., `data/Oxygen_Isotopes.xlsx`)  
+
+**Modifiable parameters inside the script**  
+- RESOLUTION_LIST (default = [50, 100, 250, 500]) – downsampling resolutions in kyr  
+- N_ITER (default = 200) – number of Monte Carlo iterations per resolution  
+- START_AGE (default = 67000) – maximum age of the record  
+- END_AGE (default = 0) – minimum age of the record  
+- AGE_INTERVAL (default = 10) – spacing for interpolated age nodes  
+- OUT_DIR (default = `C:\Users\...\Downsampling`) – output directory for results  
+
+**Expected outputs**  
+- Excel files containing mean values and confidence intervals at each resolution  
+- Line plots comparing original data with downsampled means ± 95% CI  
+- One Excel file and one PNG figure for each specified resolution  
+- Console messages confirming the saved output paths
