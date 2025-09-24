@@ -1,0 +1,28 @@
+### 1.3_timebin_iqr.py
+
+**Functionality**  
+This script calculates the rate of change within each time-bin using the interquartile range (IQR = Q3 − Q1).  
+IQR provides a robust measure of variability that reduces the influence of extreme values.  
+The results are saved in Excel format and visualized as time series plots of IQR versus age.
+
+**Input data**  
+- Excel file (.xlsx)  
+- Required columns:  
+  - Age (time axis, numeric, e.g., kyr or Ma)  
+  - Value (proxy measurements, e.g., δ¹⁸O values)  
+
+**User inputs (interactive prompts)**  
+- Excel file path (full path including file name, e.g., `data/Oxygen_Isotopes.xlsx`)  
+
+**Modifiable parameters inside the script**  
+- TIMEBIN_LIST (default = range(50, 1001, 50)) – list of time-bin widths to process (in kyr)  
+- START_AGE (default = 67000) – maximum age of the time axis  
+- END_AGE (default = 0) – minimum age of the time axis  
+- AGE_INTERVAL (default = 10) – step size for generating age nodes  
+- TITLE_PREFIX (default = "O_IQR_") – prefix for figure titles and output files  
+
+**Expected outputs**  
+- Excel files with columns: TimeBin, Age_node, Counts, Age_unique, IQR  
+- Line plots of IQR versus Age_node  
+- One Excel file and one PNG file for each specified time-bin width  
+- Console messages confirming the saved output paths
